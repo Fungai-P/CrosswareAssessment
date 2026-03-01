@@ -1,0 +1,6 @@
+@CrosswareAssessment_HostAddress = http://localhost:5048
+
+GET {{CrosswareAssessment_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
