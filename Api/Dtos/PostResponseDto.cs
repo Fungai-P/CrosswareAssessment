@@ -1,6 +1,6 @@
 ﻿namespace CrosswareAssessment.Api.Dtos;
 
-public class PostResponse
+public class PostResponseDto
 {
     public string Id { get; set; }
     public string AuthorId { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace CrosswareAssessment.Api.Dtos;
 
-public class LikeResponse
+public class LikeResponseDto
 {
     public string PostId { get; set; }
     public string UserId { get; set; }

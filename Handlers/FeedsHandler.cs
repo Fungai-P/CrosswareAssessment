@@ -16,7 +16,7 @@ public class FeedsHandler : IFeedsHandler
         _feedsRepository = feedsRepository;
     }
 
-    public async Task<FeedResult> CreateAsync(CreateFeedRequest request, CancellationToken ct)
+    public async Task<FeedResult> CreateAsync(CreateFeedRequestDto request, CancellationToken ct)
     {
         var feed = new FeedEntity
         {

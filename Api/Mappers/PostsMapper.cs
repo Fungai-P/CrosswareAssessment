@@ -5,9 +5,9 @@ namespace CrosswareAssessment.Api.Mappers;
 
 public static class PostsMapper
 {
-    public static PostResponse Map(this PostResult result)
+    public static PostResponseDto Map(this PostResult result)
     {
-        return new PostResponse
+        return new PostResponseDto
         {
             Id = result.Id,
             AuthorId = result.AuthorId,
@@ -17,9 +17,9 @@ public static class PostsMapper
         };
     }
 
-    public static LikeResponse Map(this LikeResult result)
+    public static LikeResponseDto Map(this LikeResult result)
     {
-        return new LikeResponse
+        return new LikeResponseDto
         {
             PostId = result.PostId,
             UserId = result.UserId,
@@ -29,9 +29,9 @@ public static class PostsMapper
         };
     }
 
-    public static LikesCountResponse Map(this LikesCountResult result)
+    public static LikesCountResponseDto Map(this LikesCountResult result)
     {
-        return new LikesCountResponse
+        return new LikesCountResponseDto
         {
             PostId = result.PostId,
             LikesCount = result.LikesCount

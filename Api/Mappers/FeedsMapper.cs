@@ -5,14 +5,14 @@ namespace CrosswareAssessment.Api.Mappers;
 
 public static class FeedsMapper
 {
-    public static FeedResponse Map(this FeedResult result)
+    public static FeedResponseDto Map(this FeedResult result)
     {
-        return new FeedResponse
+        return new FeedResponseDto
         {
             Id = result.Id,
             Name = result.Name,
             CreatedAt = result.CreatedAt,
-            Posts = result.Posts.Select(p => p.Map()).ToList() ?? new List<PostResponse>()
+            Posts = result.Posts.Select(p => p.Map()).ToList() ?? new List<PostResponseDto>()
         };
     }
 }

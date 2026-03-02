@@ -2,7 +2,7 @@
 
 namespace CrosswareAssessment.Api.Dtos;
 
-public class CreateFeedRequest
+public class CreateFeedRequestDto
 {
     [Required]
     public string Name { get; set; }
