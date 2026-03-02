@@ -11,7 +11,7 @@ public sealed class FeedsController : ControllerBase
 {
     [HttpPost]
     public async Task<IActionResult> Create(
-      [FromBody] CreateFeedRequest request,
+      [FromBody] CreateFeedRequestDto request,
       [FromServices] IFeedsHandler handler,
       CancellationToken ct)
     {
@@ -21,7 +21,7 @@ public sealed class FeedsController : ControllerBase
     }
 
     [HttpGet("{feedId:guid}")]
-    [ProducesResponseType(typeof(PostResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PostResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(
       [FromRoute] string feedId,
@@ -35,7 +35,7 @@ public sealed class FeedsController : ControllerBase
     }
 
     [HttpGet]
-    [ProducesResponseType(typeof(PostResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PostResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetList(
       [FromServices] IFeedsHandler handler,

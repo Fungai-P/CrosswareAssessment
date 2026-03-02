@@ -16,7 +16,7 @@ public class PostHandler : IPostHandler
         _feedsRepository = feedsRepository;
     }
 
-    public async Task<PostResult> CreateAsync(string userId, CreatePostRequest request, CancellationToken ct)
+    public async Task<PostResult> CreateAsync(string userId, CreatePostRequestDto request, CancellationToken ct)
     {
         if (string.IsNullOrWhiteSpace(request.Text))
             throw new ArgumentException("Post text cannot be empty.");

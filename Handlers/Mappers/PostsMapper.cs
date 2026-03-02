@@ -6,7 +6,7 @@ namespace CrosswareAssessment.Handlers.Mappers;
 
 public static class PostsMapper
 {
-    public static PostEntity Map(this CreatePostRequest request, string authorId)
+    public static PostEntity Map(this CreatePostRequestDto request, string authorId)
     {
         return new PostEntity
         {

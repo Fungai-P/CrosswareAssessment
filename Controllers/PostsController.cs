@@ -10,9 +10,9 @@ namespace Controllers;
 public sealed class PostsController : ControllerBase
 {
     [HttpPost]
-    [ProducesResponseType(typeof(PostResponse), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(PostResponseDto), StatusCodes.Status201Created)]
     public async Task<IActionResult> Create(
-      [FromBody] CreatePostRequest request,
+      [FromBody] CreatePostRequestDto request,
       [FromServices] IPostHandler handler,
       CancellationToken ct)
     {
@@ -27,7 +27,7 @@ public sealed class PostsController : ControllerBase
     }
 
     [HttpGet("{postId:guid}")]
-    [ProducesResponseType(typeof(PostResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PostResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(
       [FromRoute] string postId,
@@ -41,7 +41,7 @@ public sealed class PostsController : ControllerBase
     }
 
     [HttpPost("{postId:guid}/like")]
-    [ProducesResponseType(typeof(LikeResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(LikeResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> Like(
       [FromRoute] string postId,
